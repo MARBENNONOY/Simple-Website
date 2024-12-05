@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Siargao Travelers</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#hotels">Hotels</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <h1 align="center">Welcome to Siargao</h1>
+        <p>Your adventure starts here!</p>
+    </header>
+
+    <!-- Destinations Section -->
+    <section id="destinations">
+        <h2>Explore Amazing Destinations</h2>
+        <div class="destination-cards">
+            <div class="card">
+                <img src="siargao beach.jpg" alt="Beach">
+                <h3>Beach Paradise</h3>
+            </div>
+            <div class="card">
+                <img src="siargao mountain.jpg" alt="Mountain">
+                <h3>Mountain Adventures</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer personalized travel plans, guided tours, and more!</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Tourists Say!!!</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"The best vacation I've ever had! Highly recommend!" - John D.</p>
+            </div>
+            <div class="testimonial">
+                <p>"Great places I injoy my vacation so much" - Sarah W.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required><br>
+            <input type="email" id="email" placeholder="Your Email" required><br>
+            <textarea id="message" placeholder="Your Message" required></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+<script src="script.js"></script>
+<script type="module">
+    import Chatbox from 'https://cdn.jsdelivr.net/npm/@chaindesk/embeds@latest/dist/chatbox/index.js';
+  
+    const widget = await Chatbox.initBubble({
+      agentId: 'cm48eii8y0ixq2056dezd9j5i',
+      
+      // optional 
+      // If provided will create a contact for the user and link it to the conversation
+      contact: {
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'customer@email.com',
+        phoneNumber: '+33612345644',
+        userId: '42424242',
+      },
+      // optional
+      // Override initial messages
+      initialMessages: [
+        'Hello Georges how are you doing today?',
+        'How can I help you ?',
+      ],
+      // optional
+      // Provided context will be appended to the Agent system prompt
+      context: "The user you are talking to is John. Start by Greeting him by his name.",
+    });
+  
+    // open the chat bubble
+    widget.open();
+  
+    // close the chat bubble
+    widget.close()
+  
+    // or 
+    widget.toggle()
+  </script>
+</body>
+</html>
